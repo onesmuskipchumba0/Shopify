@@ -1,10 +1,6 @@
-import { ScrollView, StyleSheet, Text, View, Image, Dimensions } from 'react-native';
+import { ScrollView, StyleSheet, Text, View, Image } from 'react-native';
 import React from 'react';
 import { Link } from 'expo-router';
-
-const { width: screenWidth } = Dimensions.get('window');
-const itemMargin = 10;
-const itemWidth = (screenWidth - itemMargin * 4) / 3;  // Adjust for 3 columns with margin
 
 const CategoryHero = () => {
   const images = [
@@ -22,11 +18,9 @@ const CategoryHero = () => {
       <View style={styles.gridContainer}>
         {images.map((item) => (
           <Link href={`search/${item.link}`} key={item.id}>
-            <Image 
-              resizeMode='contain' 
-              source={item.url} 
-              style={styles.image} 
-            />
+            <View style={styles.subContainer}>
+              <Image resizeMode='contain' source={item.url} style={styles.image} />
+            </View>
           </Link>
         ))}
       </View>
@@ -44,16 +38,26 @@ const styles = StyleSheet.create({
   headerText: {
     fontSize: 24,
     fontFamily: 'PoppinsSemiBold',
-    marginBottom: 15,
+    marginBottom: 15,  // Increase bottom margin for more space under header
   },
   gridContainer: {
     flexDirection: 'row',
     flexWrap: 'wrap',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
+    paddingHorizontal: 1,  // Adds padding on the sides
+  },
+  subContainer: {
+    backgroundColor: '#fff',
+    borderRadius: 5,
+    padding: 0,
+    width: 140,
+    height: 140,
+    margin: 2,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   image: {
-    width: itemWidth,
-    height: itemWidth,  // Keep the aspect ratio square
-    margin: itemMargin,
+    width: 120, // Adjusted to fit better with increased padding
+    height: 120,
   },
 });
