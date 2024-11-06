@@ -9,7 +9,8 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "test": "jest --watchAll",
-    "lint": "expo lint"
+    "lint": "expo lint",
+    "emulator":"emulator -avd MEDIUM_PHONE_API_35"
   },
   "jest": {
     "preset": "jest-expo"
