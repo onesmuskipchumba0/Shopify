@@ -28,7 +28,11 @@ const TabsLayout = () => {
 
   if (isLoggedIn === null) {
     // Show a loading indicator while checking authentication
-    return <ActivityIndicator size="large" color="purple" />;
+    return (
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+        <ActivityIndicator size="large" color="purple" />
+      </View>
+  );
   }
 
   if (!isLoggedIn) {

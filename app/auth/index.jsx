@@ -34,9 +34,7 @@ const Index = () => {
             </Link>
           </Text>
 
-          <Link style={{ marginTop: 40 }} href="(tabs)">
-            <Text style={{ color: 'white', fontSize: 16 }}>Skip</Text>
-          </Link>
+          
         </View>
       </ImageBackground>
     </View>
