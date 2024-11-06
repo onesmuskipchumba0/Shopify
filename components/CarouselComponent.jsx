@@ -9,12 +9,13 @@ const CarouselComponent = () => {
     const data = [
         { id: 1, imageUrl: require('../assets/images/carousel/_S.jpg'), title: 'Easy' },
         { id: 2, imageUrl: require('../assets/images/carousel/_S-1.gif'), title: 'Affordable' },
-        { id: 3, imageUrl: require('../assets/images/carousel/xiaomi-desktop.jpg'), title: 'Convinient' },
+        { id: 3, imageUrl: require('../assets/images/carousel/_S-2.gif'), title: 'Convinient' },
+        { id: 3, imageUrl: require('../assets/images/carousel/_S-3.jpg'), title: 'For you' },
     ];
 
     const renderItem = ({ item }) => (
         <View style={styles.slide}>
-            <Image source={item.imageUrl} style={styles.image} />
+            <Image source={item.imageUrl} resizeMode='contain' style={styles.image} />
             <Text style={styles.title}>{item.title}</Text>
         </View>
     );
@@ -52,23 +53,26 @@ const CarouselComponent = () => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        justifyContent: 'center',
+        marginLeft:0,
+        marginRight:0,
+
     },
     carousel: {
         marginTop: 0,
-        marginBottom:50,
+        marginBottom:20,
+        alignItems:'center',
+        justifyContent:'center',
     },
     slide: {
         backgroundColor: 'white',
         borderRadius: 8,
         height: 250,
-        padding: 20,
         justifyContent: 'center',
         alignItems: 'center',
     },
     image: {
         width: '100%',
-        height: 150,
+        height: 200,
         borderRadius: 8,
     },
     title: {

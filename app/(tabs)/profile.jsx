@@ -37,7 +37,7 @@ const ProfileScreen = () => {
           style={styles.profileImage}
         />
         <Text style={styles.userName}>
-          {user ? `Welcome, ${user.displayName || user.email}` : 'Guest'}
+          {user ? `Welcome, ${user.displayName || user.email.split('@')[0]}` : 'Guest'}
         </Text>        
         <Text style={styles.userEmail}>{user?.email || 'Please log in'}</Text>
       </View>

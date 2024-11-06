@@ -6,6 +6,8 @@
     "start": "expo start",
     "reset-project": "node ./scripts/reset-project.js",
     "android": "expo start --android",
+    "android:cache": "expo start -c --android",
+    "android:offline": "expo start --android --offline",
     "ios": "expo start --ios",
     "web": "expo start --web",
     "test": "jest --watchAll",

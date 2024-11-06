@@ -2,7 +2,7 @@ import { StyleSheet, TextInput, View, TouchableOpacity } from 'react-native';
 import React, { useState } from 'react';
 import { Ionicons } from '@expo/vector-icons';
 
-const CustomText = ({ placeholder, isPass, icon, onChangeText }) => {
+const CustomText = ({ placeholder, isPass, icon, value, onChangeText }) => {
     const [seePass, setSeePass] = useState(isPass); // Initial value based on isPass prop
 
     return (
@@ -13,7 +13,8 @@ const CustomText = ({ placeholder, isPass, icon, onChangeText }) => {
                 placeholder={placeholder}
                 secureTextEntry={seePass}
                 placeholderTextColor="rgba(255,255,255,0.8)"
-                onChangeText={onChangeText}
+                value={value} // Bind the input value to the state
+                onChangeText={onChangeText} // Update the state on text change
             />
             {isPass && (
                 <TouchableOpacity onPress={() => setSeePass(!seePass)}>
@@ -29,7 +30,6 @@ const CustomText = ({ placeholder, isPass, icon, onChangeText }) => {
 };
 
 export default CustomText;
-
 
 const styles = StyleSheet.create({
     container: {

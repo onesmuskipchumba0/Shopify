@@ -45,20 +45,20 @@ const Login = () => {
             <Text style={styles.textTitle}>Welcome to Shopify</Text>
             <Text style={styles.textSecondary}>Login to your account</Text>
 
+            {/* CustomText components for Email and Password */}
             <CustomText
-            placeholder="Email"
-            icon="person"
-            value={email}
-            onChangeText={setEmail}
-          />
-          <CustomText
-            placeholder="Password"
-            icon="key"
-            isPass={true}  // Correct prop name for password field
-            value={password}
-            onChangeText={setPassword}
-          />
-
+              placeholder="Email"
+              icon="person"
+              value={email}
+              onChangeText={setEmail}  // Set email state when text changes
+            />
+            <CustomText
+              placeholder="Password"
+              icon="key"
+              isPass={true}  // Password field (secure entry)
+              value={password}
+              onChangeText={setPassword}  // Set password state when text changes
+            />
 
             <View style={styles.subContainer}>
               <PrimaryBtn_2 title="Login" onPress={handleLogin} />

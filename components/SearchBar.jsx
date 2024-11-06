@@ -1,13 +1,26 @@
 import { StatusBar, StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import { TextInput } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
+import { Link } from 'expo-router'
 
 const SearchBar = () => {
+  const [input, setInput] = useState('')
+  
+  const handleInputChange = (text) => {
+    setInput(text)
+  }
+  
   return (
     <View style={styles.container}>
-      <Ionicons name='search-outline' size={18}/>
-      <TextInput style={styles.input} placeholder='Search products'>
+      <Link href={`search/${input}`}>
+        <Ionicons name='search-outline' size={18}/>
+      </Link>
+      <TextInput
+      value={input}
+      onChangeText={handleInputChange} 
+      style={styles.input} 
+      placeholder='Search products'>
       </TextInput>
 
     </View>

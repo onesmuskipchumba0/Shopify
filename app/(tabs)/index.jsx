@@ -5,16 +5,20 @@ import Banner from '../../components/Banner'
 import CategoryNav from '../../components/CategoryNav'
 import CategoryCard from '../../components/CategoryCard'
 import CarouselComponent from '../../components/CarouselComponent'
+import CategoryHero from '../../components/CategoryHero'
+import CategoriesComponent from '../../components/CategoriesComponent'
 
 const index = () => {
   return (
     <View style={styles.container}>
       <SearchBar/>
-      <ScrollView>
-        <Banner />
+      <ScrollView style={{marginBottom:150}}>
+        <CarouselComponent />
         <CategoryNav />
         <CategoryCard />
-        {/* <CarouselComponent /> */}
+        <Banner />
+        <CategoryHero />
+        <CategoriesComponent category={"smartphones"}/>
       </ScrollView>
     </View>
   )
@@ -25,6 +29,7 @@ export default index
 const styles = StyleSheet.create({
   container:{
     backgroundColor:'#FFFFFF',
-    alignItems:'center'
+    alignItems:'center',
+    width:'100%',
   }
 })

@@ -15,8 +15,8 @@ const TabsLayout = () => {
             case 'index':
               iconName = focused ? 'home' : 'home-outline';
               break;
-            case 'favourites':
-              iconName = focused ? 'heart' : 'heart-outline';
+            case 'categories':
+              iconName = focused ? 'menu' : 'menu-outline';
               break;
             case 'cart':
               iconName = focused ? 'cart' : 'cart-outline';

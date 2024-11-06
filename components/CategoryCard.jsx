@@ -24,12 +24,12 @@ const CategoryCard = ({category}) => {
     }
   return (
     <View style={styles.container}>
-    <Text>Featured</Text>
+    <Text style={{fontSize:24,fontFamily:'PoppinsSemiBold'}}>Featured</Text>
     <ScrollView contentContainerStyle={{justifyContent:'center'}} horizontal={true} style={styles.scrollview}>
       {loading? <Text>Loading...</Text> : null}
       {error? <Text>Error: {error}</Text> : null}
       {products.map(product=>(
-        <Product product={product}/>
+        <Product key={product.id} product={product}/>
       ))}
     </ScrollView>
     </View>
@@ -43,7 +43,8 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         justifyContent: 'space-evenly',
         alignItems: 'center',
-        height: 400,
+        height: 330,
+        marginBottom:0
     },
     scrollview:{
         marginBottom: 5,

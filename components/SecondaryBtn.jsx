@@ -14,7 +14,7 @@ export default SecondaryBtn;
 const styles = StyleSheet.create({
     container: {
         width: '80%',
-        backgroundColor: 'white', // Lighter background for secondary button
+        backgroundColor: '#FF5500', // Lighter background for secondary button
         borderRadius: 10,
         padding: 10,
         margin: 10,
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
         marginTop: 'auto',
     },
     text: {
-        color: '#FF5500', // Primary color text for emphasis
+        color: 'white', // Primary color text for emphasis
         fontSize: 18,
         fontWeight: 'bold',
     },
