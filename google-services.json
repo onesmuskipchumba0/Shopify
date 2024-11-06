@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1055719721288",
+    "project_id": "mobile-df37e",
+    "storage_bucket": "mobile-df37e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1055719721288:android:29a9d536fc8ecff423cb7d",
+        "android_client_info": {
+          "package_name": "com.onesmusapps.shopify"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDK3Vz2Et1P7zA0sbK0cslX51C5E0Ml8g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
