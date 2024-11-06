@@ -19,7 +19,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/online-store.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.onesmus509.Shopify"
     },
     "web": {
       "bundler": "metro",
@@ -31,6 +32,11 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "725bbd8a-a703-434a-b1c9-2209365b226e"
+      }
     }
   }
 }
