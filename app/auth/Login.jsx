@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { ImageBackground, StyleSheet, Text, View, Alert } from 'react-native';
-import PrimaryBtn_2 from '../../components/PrimaryBtn-2';
+import { ImageBackground, StyleSheet, Text, View, Alert, TouchableOpacity } from 'react-native';
 import { Link, useRouter } from 'expo-router';
 import CustomText from '../../components/CustomText';
 import { auth } from '../../firebaseConfig';
@@ -19,7 +18,7 @@ const Login = () => {
     try {
       await auth.signInWithEmailAndPassword(email, password);
       Alert.alert('Success', 'You are logged in!');
-      router.push('(tabs)'); 
+      router.push('(tabs)');
     } catch (error) {
       let errorMessage = 'An error occurred. Please try again.';
       if (error.code === 'auth/user-not-found') {
@@ -36,7 +35,7 @@ const Login = () => {
   return (
     <View style={styles.container}>
       <ImageBackground
-        resizeMode='cover'
+        resizeMode="cover"
         style={styles.imageBackground}
         source={require('../../assets/images/auth/Onboarding-3.png')}
       >
@@ -50,20 +49,24 @@ const Login = () => {
               placeholder="Email"
               icon="person"
               value={email}
-              onChangeText={setEmail}  // Set email state when text changes
+              onChangeText={setEmail} // Set email state when text changes
             />
             <CustomText
               placeholder="Password"
               icon="key"
-              isPass={true}  // Password field (secure entry)
+              isPass={true} // Password field (secure entry)
               value={password}
-              onChangeText={setPassword}  // Set password state when text changes
+              onChangeText={setPassword} // Set password state when text changes
             />
 
             <View style={styles.subContainer}>
-              <PrimaryBtn_2 title="Login" onPress={handleLogin} />
+              {/* Replacing the PrimaryBtn_2 component with a custom button */}
+              <TouchableOpacity style={styles.button} onPress={handleLogin}>
+                <Text style={styles.buttonText}>Login</Text>
+              </TouchableOpacity>
+
               <Text style={styles.text}>
-                Don't have an account? 
+                Don't have an account?
                 <Link href="auth/Signup">
                   <Text style={styles.linkText}> Sign Up</Text>
                 </Link>
@@ -98,12 +101,13 @@ const styles = StyleSheet.create({
   authContainer: {
     width: '100%',
     height: '70%',
-    borderRadius: 20,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'rgba(0,0,0,0.8)',
     marginTop: 'auto',
     padding: 20,
+    borderTopLeftRadius:20,
+    borderTopRightRadius:20
   },
   textTitle: {
     color: '#FF5500',
@@ -135,5 +139,24 @@ const styles = StyleSheet.create({
     width: '100%',
     alignItems: 'center',
     marginBottom: 70,
+  },
+  button: {
+    width: '80%',
+    backgroundColor: 'white',
+    borderRadius: 10,
+    padding: 10,
+    margin: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.8,
+    shadowRadius: 2,
+    elevation: 2,
+    marginTop: 'auto',
+  },
+  buttonText: {
+    color: '#FF5500',
+    fontSize: 18,
   },
 });

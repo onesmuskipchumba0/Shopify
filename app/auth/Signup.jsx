@@ -1,4 +1,4 @@
-import { ImageBackground, ScrollView, StyleSheet, Text, View, Alert } from 'react-native';
+import { ImageBackground, ScrollView, StyleSheet, Text, View, Alert,TouchableOpacity } from 'react-native';
 import React, { useState } from 'react';
 import { auth, firestore } from '../../firebaseConfig'; // Ensure this import is correct
 import PrimaryBtn_2 from '../../components/PrimaryBtn-2';
@@ -67,13 +67,14 @@ const Signup = () => {
           <View style={{
             width: '100%',
             height: '70%',
-            borderRadius: 20,
             justifyContent: 'center',
-            alignItems: 'start',
+            alignItems: 'center',
             backgroundColor: 'rgba(0,0,0,0.8)',
             marginTop: 'auto',
+            borderTopLeftRadius:20,
+            borderTopRightRadius:20
           }}>
-            <ScrollView>
+            <ScrollView style={{width:'100%'}} contentContainerStyle={{alignItems:'center'}}>
               <Text style={styles.textTitle}>Welcome to Shopify</Text>
               <Text style={styles.textSecondary}>Create an account</Text>
               <CustomText placeholder="Fullname" icon="person" value={fullname} onChangeText={setFullname} />
@@ -83,7 +84,9 @@ const Signup = () => {
               <CustomText placeholder="Confirm Password" icon="key" value={confirmPassword} isPass={true} onChangeText={setConfirmPassword} />
 
               <View style={styles.subContainer}>
-                <PrimaryBtn_2 title="Sign up" onPress={handleSignup} />
+              <TouchableOpacity style={styles.button} onPress={handleSignup}>
+                <Text style={styles.buttonText}>Sign up</Text>
+              </TouchableOpacity>
                 <Text style={styles.text}>
                   Already have an account?
                   <Link href="auth/Login">
@@ -133,5 +136,24 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
     marginBottom: 70,
+  },
+  button: {
+    width: '80%',
+    backgroundColor: 'white',
+    borderRadius: 10,
+    padding: 10,
+    margin: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.8,
+    shadowRadius: 2,
+    elevation: 2,
+    marginTop: 'auto',
+  },
+  buttonText: {
+    color: '#FF5500',
+    fontSize: 18,
   },
 });
