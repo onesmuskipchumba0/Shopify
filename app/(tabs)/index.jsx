@@ -19,6 +19,8 @@ const index = () => {
         <Banner />
         <CategoryHero />
         <CategoriesComponent category={"smartphones"}/>
+        <CategoriesComponent category={"womens-shoes"}/>
+        <CategoriesComponent category={"laptops"}/>
       </ScrollView>
     </View>
   )
