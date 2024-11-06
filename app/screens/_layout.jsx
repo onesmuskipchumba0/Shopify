@@ -7,6 +7,7 @@ const ScreenLayout = () => {
     <Stack>
         <Stack.Screen name='[id]' options={{title:`Category`}}/>
         <Stack.Screen name='settings' options={{title:`Settings`}}/>
+        <Stack.Screen name='about' options={{title:`Settings`}}/>
     </Stack>
   )
 }

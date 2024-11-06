@@ -5,7 +5,7 @@ import { Stack } from 'expo-router'
 const SearchLayout = () => {
   return (
     <Stack>
-        <Stack.Screen name='[query]' options={{title:"Search",headerShown:false}}/>
+        <Stack.Screen name='[query]' options={{title:"Search"}}/>
     </Stack>
   )
 }

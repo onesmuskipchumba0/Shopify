@@ -13,7 +13,7 @@ const SettingsScreen = () => {
   return (
     <View style={styles.container}>
       {/* Profile Settings */}
-      <TouchableOpacity style={styles.option} onPress={() => router.push('/profile-settings')}>
+      <TouchableOpacity style={styles.option} onPress={() => router.push('(tabs)/profile')}>
         <Ionicons name="person-outline" size={24} color="#555" />
         <Text style={styles.optionText}>Profile Settings</Text>
       </TouchableOpacity>
@@ -29,13 +29,6 @@ const SettingsScreen = () => {
         />
       </View>
 
-      
-
-      {/* Security Settings */}
-      <TouchableOpacity style={styles.option} onPress={() => router.push('/security-settings')}>
-        <Ionicons name="lock-closed-outline" size={24} color="#555" />
-        <Text style={styles.optionText}>Security</Text>
-      </TouchableOpacity>
 
       {/* About */}
       <TouchableOpacity style={styles.option} onPress={() => router.push('screens/about')}>

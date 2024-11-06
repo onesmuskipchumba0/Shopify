@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, Image, TouchableOpacity, ScrollView, StyleSheet } from 'react-native';
+import { View, Text, Image, TouchableOpacity, ScrollView, StyleSheet, Linking } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
 import {firebase} from '../../firebaseConfig'; // Ensure your Firebase config is imported
@@ -27,7 +27,12 @@ const ProfileScreen = () => {
       console.error("Logout error", error);
     }
   };
-
+  const openGithub = () =>{
+    Linking.openURL('https://github.com/onesmuskipchumba0'); // Replace with your GitHub username
+  }
+  const openGmail = () =>{
+    Linking.openURL('mailto:onesmuskipchumba5@gmail.com'); // Replace with your Gmail address
+  }
   return (
     <ScrollView style={styles.container}>
       {/* Header Section */}
@@ -45,7 +50,7 @@ const ProfileScreen = () => {
       {/* Profile Options */}
       {user ? (
         <View style={styles.optionsContainer}>
-          <TouchableOpacity style={styles.option} onPress={() => router.push('/order-history')}>
+          <TouchableOpacity style={styles.option} onPress={() => router.push('(tabs)/cart')}>
             <Ionicons name="cart-outline" size={24} color="#555" />
             <Text style={styles.optionText}>Order History</Text>
           </TouchableOpacity>
@@ -55,14 +60,13 @@ const ProfileScreen = () => {
             <Text style={styles.optionText}>Settings</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.option} onPress={() => router.push('(tabs)/favorites')}>
-            <Ionicons name="heart-outline" size={24} color="#555" />
-            <Text style={styles.optionText}>Favorites</Text>
+          <TouchableOpacity style={styles.option} onPress={() => openGithub()}>
+            <Ionicons name="logo-github" size={24} color="#555" />
+            <Text style={styles.optionText}>Github</Text>
           </TouchableOpacity>
-
-          <TouchableOpacity style={styles.option} onPress={() => router.push('/address-book')}>
-            <Ionicons name="location-outline" size={24} color="#555" />
-            <Text style={styles.optionText}>Address Book</Text>
+          <TouchableOpacity style={styles.option} onPress={() => openGmail()}>
+            <Ionicons name="mail-outline" size={24} color="#555" />
+            <Text style={styles.optionText}>Get in touch</Text>
           </TouchableOpacity>
 
           {/* Logout Button */}
