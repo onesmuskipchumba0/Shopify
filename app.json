@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "Shopify-2.0",
-    "slug": "Shopify-2.0",
+    "name": "Shopify",
+    "slug": "Shopify",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/images.jpg",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "splash": {
-      "image": "./assets/images/splash.png",
+      "image": "./assets/images/online-store.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -17,7 +17,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "foregroundImage": "./assets/images/online-store.png",
         "backgroundColor": "#ffffff"
       }
     },
